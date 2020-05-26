@@ -1,0 +1,58 @@
+
+<div class="table-responsive mt2">
+  <table class="table">
+    <thead>
+      <th>#</th>
+      <th>Property</th>
+      <th>Category</th>
+      <th>City</th>
+      <th>Street</th>
+      <th>bedrooms</th>
+      <th>image</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Owner</th>
+    </thead>
+      <tbody>
+          <tr *ngFor= "let property of propertyList">
+              <td>
+                <span>
+                    <a (click)= "updatePropertyAd(property)">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                </span>
+                <span class="ml1">
+                    <a (click)= "removeProperty(property._id)">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </span>
+              </td>
+              <td>{{property.propertyName}}</td>
+              <td>{{property.propertyCategory}}</td>
+              <td>{{property.city}}</td>
+              <td>{{property.street}}</td>
+              <td>{{property.bedrooms}}</td>
+              <td>{{property.imageinput}}</td>
+              <td>{{property.propertyDescription}}</td>
+              <td>{{property.propertyPrice}}</td>
+              <td>{{property.propertyOwner}}</td>
+
+            </tr>
+      </tbody>
+  </table>
+</div>
+
+
+
+
+<!-- <div class="row jumbotron mb3" *ngFor= "let property of propertyList">
+
+  <div class="col-sm-1">
+    Edit
+  </div>
+  <div class="col-sm-2">{{property.propertyName}}</div>
+  <div class="col-sm-3">{{property.propertyDescription}}</div>
+  <div class="col-sm-2">{{property.propertyCategory}}</div>
+  <div class="col-sm-2">{{property.propertyPrice}}</div>
+  <div class="col-sm-2">{{property.propertyOwner}}</div>
+</div> -->

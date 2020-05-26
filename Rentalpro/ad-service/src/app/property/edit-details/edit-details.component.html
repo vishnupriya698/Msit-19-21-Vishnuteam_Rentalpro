@@ -1,0 +1,56 @@
+<div *ngIf="property">
+
+    <form  #addPropertyForm="ngForm" (ngSubmit)="updateProperty(addPropertyForm)">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="propertyName">Property Name</label>
+            <input type="text" #name= "ngModel" class="form-control" id="propertyName" name="propertyName" [(ngModel)]="property.propertyName" placeholder="Property"
+              value="" [ngClass]="{'invalid-textbox' :addPropertyForm.submitted && !name.valid }" required>
+            <div *ngIf="addPropertyForm.submitted && !name.valid">
+              <label class="validation-message">This field is required.</label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="propertyCategory">Property Category</label>
+            <input type="text" #propertyCategory="ngModel" class="form-control" id="propertyCategory" name="propertyCategory" [(ngModel)]="property.propertyCategory"
+              placeholder="Property Category" value="" [ngClass]="{'invalid-textbox' :addPropertyForm.submitted && !propertyCategory.valid }" required>
+              <div *ngIf="addPropertyForm.submitted && !propertyCategory.valid">
+                <label class="validation-message">This field is required.</label>
+              </div>
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <label for="propertyDescription">Property Description
+            <span class="text-muted">(Optional)</span>
+          </label>
+          <textarea type="text" class="form-control" id="propertyDescription" placeholder="Property Description" name="propertyDescription"
+            [(ngModel)]="property.propertyDescription"></textarea>
+        </div>
+      
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="propertyPrice">Property Price</label>
+            <input type="number" #propertyPrice= "ngModel" name="propertyPrice" class="form-control" [(ngModel)]="property.propertyPrice" placeholder="Property Price"
+              id="propertyPrice" value="" [ngClass]="{'invalid-textbox' :addPropertyForm.submitted && !propertyPrice.valid }"  required>
+              <div *ngIf="addPropertyForm.submitted && !propertyPrice.valid">
+                <label class="validation-message">This field is required.</label>
+              </div>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="propertySeller">Property Owner</label>
+            <input type="text" class="form-control" id="propertySeller" [(ngModel)]="property.propertyOwner" name="propertyOwner" placeholder="Property Owner"
+              required>
+          </div>
+        </div>
+      
+        <hr class="mb-4">
+      
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Update property Ad</button>
+      </form>
+</div>
+
+  
